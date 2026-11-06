@@ -1,0 +1,154 @@
+/* ==========================================================
+   Contrast checks (WCAG AA needs at least 4.5 to 1):
+   - Main color #5b2a86 (royal purple) vs white text: 9.9 to 1  -> passes
+   - Text color #2b2233 vs page background #fbf5e9:  14.02 to 1 -> passes
+   ========================================================== */
+
+/* Step 2: sets the page background, text color, font, size and spacing for everything */
+body {
+  background-color: #fbf5e9; /* warm cream page background */
+  color: #2b2233;            /* dark purple-gray text, easier on the eyes than pure black */
+  font-family: "Segoe UI", Arial, sans-serif; /* body font with a fallback list */
+  font-size: 18px;           /* comfortable reading size */
+  line-height: 1.6;          /* space between lines of text */
+  margin: 0;                 /* removes the default gap so the header touches the edges */
+}
+
+/* Step 3: gives all headings the same serif font and spacing */
+h1, h2, h3 {
+  font-family: "Palatino Linotype", Palatino, serif; /* new heading font stack for Step 10 */
+  letter-spacing: 1px;       /* adds a little space between letters */
+}
+
+/* Step 3: makes my name big in the header */
+h1 {
+  font-size: 3rem;           /* 48px, grows if the reader picks bigger text */
+  margin: 0 0 8px;           /* no space on top, a small gap below */
+}
+
+/* Step 3: styles the section headings with the main color and an underline */
+h2 {
+  font-size: 1.8rem;         /* 28.8px heading size */
+  color: #5b2a86;            /* my royal purple main color */
+  border-bottom: 2px solid #e3d6ef; /* thin light purple line under the heading */
+  padding-bottom: 6px;       /* space between the text and the line */
+  margin-top: 40px;          /* pushes the heading away from what is above it */
+}
+
+/* Step 4: gives paragraphs space above and below */
+p {
+  margin: 0 0 16px;          /* no top gap, a gap below each paragraph */
+}
+
+/* Step 4: makes the opening sentence stand out */
+.intro {
+  font-size: 1.3rem;         /* bigger than normal text */
+  font-style: italic;        /* slanted letters */
+}
+
+/* Step 4: colors my bold word */
+strong {
+  font-weight: 700;          /* bold letters */
+  color: #5b2a86;            /* main purple */
+}
+
+/* Step 5: styles links in the text */
+a {
+  color: #5b2a86;            /* links use the main purple */
+  font-weight: bold;         /* bold so links are easy to spot */
+  text-decoration: underline; /* keeps the underline so links are easy to find */
+}
+
+/* Step 5: removes the underline while the mouse is over a link */
+a:hover {
+  text-decoration: none;     /* underline disappears on hover as feedback */
+}
+
+/* Step 5: shows keyboard users which link they are on */
+a:focus-visible {
+  outline: 3px solid #c77d00; /* thick gold outline when tabbing */
+  outline-offset: 3px;        /* small gap between the link and the outline */
+}
+
+/* Step 6: turns the header into a colored band across the top */
+.site-header {
+  background-color: #5b2a86; /* main purple band */
+  color: #ffffff;            /* white text on purple */
+  text-align: center;        /* centers the name and tagline */
+  padding: 40px 20px;        /* top and bottom space, then left and right space */
+}
+
+/* Step 6: styles the small line under my name */
+.tagline {
+  font-size: 0.9rem;         /* smaller than normal text */
+  text-transform: uppercase; /* shows the words in capital letters */
+  letter-spacing: 2px;       /* spreads the letters out */
+  word-spacing: 6px;         /* NEW PROPERTY: adds extra space between the words */
+  margin: 0;                 /* removes the gap under the tagline */
+}
+
+/* Step 6: centers the main content in a readable column */
+.container {
+  max-width: 760px;          /* column never gets wider than this */
+  margin: 0 auto;            /* auto on the sides puts the column in the middle */
+  padding: 0 20px 40px;      /* side space so text never touches the screen edge */
+}
+
+/* Step 7: turns the quick facts box into a card */
+.card {
+  background-color: #ffffff; /* white card on the cream page */
+  border: 1px solid #e3d6ef; /* thin light purple line around the card */
+  border-left: 6px solid #5b2a86; /* thick purple stripe on the left side */
+  border-radius: 12px;       /* rounded corners */
+  padding: 24px;             /* space inside the card */
+  margin: 32px 0;            /* space above and below the card */
+  box-shadow: 0 4px 12px rgba(31, 36, 48, 0.12); /* soft shadow under the card */
+}
+
+/* Step 7: styles the heading inside the card only */
+.card h3 {
+  margin-top: 0;             /* removes the gap above so the heading sits at the top */
+  color: #5b2a86;            /* main purple */
+  font-size: 1.4rem;         /* a little bigger than normal text */
+}
+
+/* Step 8: makes the Email me link look like a button */
+.button {
+  display: inline-block;     /* lets the link have real height and width */
+  background-color: #5b2a86; /* purple button */
+  color: #ffffff;            /* white text on the button */
+  padding: 0.6em 1.4em;      /* comfortable click space that grows with the text */
+  border-radius: 8px;        /* rounded button corners */
+  text-decoration: none;     /* no underline on a button */
+  font-weight: bold;         /* bold button text */
+}
+
+/* Step 8: darkens the button while the mouse is over it */
+.button:hover {
+  background-color: #431f65; /* darker purple on hover */
+}
+
+/* Step 9: changes the bullets and spacing in the lists */
+ul {
+  list-style-type: square;   /* square bullets instead of round ones */
+  padding-left: 24px;        /* how far the bullets are indented */
+}
+
+/* Step 9: adds space between the list items */
+li {
+  margin-bottom: 8px;        /* small gap under each item */
+}
+
+/* Step 9: styles the footer at the bottom of the page */
+.site-footer {
+  border-top: 1px solid #e3d6ef; /* thin line above the footer */
+  text-align: center;        /* centers the footer text */
+  font-size: 0.85rem;        /* small text */
+  color: #5a5163;            /* muted gray-purple, still readable on cream */
+  padding: 20px;             /* space inside the footer */
+}
+
+/* Step 9: removes the extra gap under the footer paragraph */
+.site-footer p {
+  margin: 0;                 /* no gap so the footer stays neat */
+}
